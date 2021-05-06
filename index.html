@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="utf-8"/>
-    <title>Befunder| Think.Health </title>
+    <title>Reporter | Think.Health </title>
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     
@@ -19,11 +19,11 @@
         <header id="home" class="header">
             <section class="container">
                 <img alt="Embedded Image" src="src/logo.png" />
-                <h1 class="title">Reporter 3000!</h1>
+                <h1 class="title">Reporter</h1>
                 <p class="description">Tool für Sars-CoV-2 Meldungen</p>
             </section>
         </header>
-        <form>
+        <form onsubmit="saveFile()">
             <section id="labor" class="container">
                 <div class="container">
                     <p class="description">Hier werden die Informationen vom Labor eingetragen:</p>
@@ -78,7 +78,7 @@
                                 <label for="betroffenePersonNachname">Nachname</label>
                                 <input type="text" id="betroffenePersonNachname" placeholder="Mustermann" required/>
 
-                                <label for="betroffenePersonVorname">Nachname</label>
+                                <label for="betroffenePersonVorname">Vorname</label>
                                 <input type="text" id="betroffenePersonVorname" placeholder="Max" required/>
 
                                 <label for="betroffenePersonGeburtsdatum">Geburtsdatum</label>
@@ -131,7 +131,7 @@
                                 </select>
 
                                 <label for="auftragsnummerLabor">Laborauftragsnummer</label>
-                                <input type="text" id="auftragsnummerLabor" placeholder="bspw. 10002020-1" />
+                                <input type="text" id="auftragsnummerLabor" placeholder="bspw. 10002020-1" required/>
 
                                 <label for="befundArt">Befundart des Bericht</label>
                                 <select id="befundArt">
@@ -164,24 +164,24 @@
 
                                 <label for="ergebnisText">Ergebnis des durchgeführten Labortests</label>
                                 <select id="ergebnisText">
-                                    <option selected value="">POSITIV</option>
+                                    <option value="POSITIV">POSITIV</option>
                                     <option value="positiv">positiv</option>
                                     <option value="negativ">negativ</option>
                                     <option value="invalid">schwach positiv</option>
                                 </select>
 
                                 <label for="testbezogeneHinweise">Testbezogene Hinweise</label>
-                                <textarea id="testbezogeneHinweise" name="msg" placeholder="weitere Hinweise" style="height:100px"></textarea>
+                                <textarea id="testbezogeneHinweise" placeholder="weitere Hinweise" style="height:100px"></textarea>
                             </fieldset>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="submit" class="container">
+            <section id="sub" class="container">
                 <div class="container">
                     <div class="row">
                         <div class="column">
-                            <input class="button" type="submit" id="bt" value="Befund erstellen!" onclick="saveFile()" />
+                            <input class="button" type="submit" id="bt" value="Befund erstellen!"/>
                         </div>
                     </div>
                 </div>
@@ -201,8 +201,8 @@
 </body>
 
 <script>
-    let saveFile = () => {
-    	
+        let saveFile = () => {
+
         // Get the data from each element on the form.
         const einsender = {
             einsenderEinrichtungIdentifier: document.getElementById('einsenderEinrichtungIdentifier').value,
@@ -255,6 +255,8 @@
 
         console.log(data)
 
+
+
         // This variable stores all the data.
 
         // Convert the text to BLOB.
@@ -275,5 +277,6 @@
 
         newLink.click(); 
     }
+
 </script>
 </html>
