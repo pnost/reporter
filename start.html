@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <title>Befunder| Think.Health </title>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="milligram/dist/milligram.css">
+    
+    <!-- You should properly set the path from the main file. -->
+</head>
+<body>
+    <div class="wrapper">
+        <header id="home" class="header">
+            <section class="container">
+                <img alt="Embedded Image" src="src/logo.png" />
+                <h1 class="title">Reporter 3000!</h1>
+                <p class="description">Tool für Sars-CoV-2 Meldungen</p>
+            </section>
+        </header>
+        <form>
+            <section id="labor" class="container">
+                <div class="container">
+                    <p class="description">Hier werden die Informationen vom Labor eingetragen:</p>
+                    <div class="row">
+                        <div class="column">
+                            <fieldset>
+                                <label for="einsenderEinrichtungIdentifier">Betriebsstättennummer (BSN)</label>
+                                <input type="text" id="einsenderEinrichtungIdentifier" value="99999999" />
+
+                                <label for="einsenderEinrichtungAnsprechpartner">Ansprechpartner</label>
+                                <input type="text" id="einsenderEinrichtungAnsprechpartner" placeholder="Ansprechpartner" value="Dr. Florian Kainzinger" />
+
+                                <label for="einsenderEinrichtungTelefonnummer">Telefonnummer</label>
+                                <input type="text" id="einsenderEinrichtungTelefonnummer" value="+491776408861" />
+
+                                <label for="einsenderEinrichtungFaxnummer">Faxnummer</label>
+                                <input type="text" id="einsenderEinrichtungFaxnummer" value="030123456789" />
+
+                                <label for="einsenderEinrichtungEmail">E-Mail</label>
+                                <input type="text" id="einsenderEinrichtungEmail" value="fk@think-health.de" />
+
+                            </fieldset>
+                        </div>
+                        <div class="column">
+                            <fieldset>
+                                <label for="einsenderEinrichtungName">Name</label>
+                                <input type="text" id="einsenderEinrichtungName" value="Molekulardiagnostisches Speziallabor Think.Health Hygiene Solutions GmbH" />
+
+                                <label for="einsenderEinrichtungAnschriftenzeile">Straße</label>
+                                <input type="text" id="einsenderEinrichtungAnschriftenzeile" value="Humboltdinsel 9" />
+
+                                <label for="einsenderEinrichtungPlz">PLZ</label>
+                                <input type="text" id="einsenderEinrichtungPlz" value="13507" />
+
+                                <label for="einsenderEinrichtungOrt">Ort</label>
+                                <input type="text" id="einsenderEinrichtungOrt" value="Berlin" />
+
+                                <label for="melderEinrichtungIdentifier">Identifier</label>
+                                <input type="text" id="melderEinrichtungIdentifier" value="99999999" />
+
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="patient" class="container">
+                <div class="container">
+                    <p class="description">Hier werden die Patientendaten eingetragen:</p>
+                    <div class="row">
+                        <div class="column">
+                            <fieldset>
+                                <label for="betroffenePersonNachname">Nachname</label>
+                                <input type="text" id="betroffenePersonNachname" placeholder="Mustermann" required/>
+
+                                <label for="betroffenePersonVorname">Nachname</label>
+                                <input type="text" id="betroffenePersonVorname" placeholder="Max" required/>
+
+                                <label for="betroffenePersonGeburtsdatum">Geburtsdatum</label>
+                                <input type="date" id="betroffenePersonGeburtsdatum" placeholder="2021-05-25"/>
+
+                                <label for="betroffenePersonGeschlecht">Geschlecht</label>
+                                <select id="betroffenePersonGeschlecht" required>
+                                    <option value="M">männlich</option>
+                                    <option value="W">weiblich</option>
+                                    <option value="U">unbekannt</option>
+                                    <option value="X">unbestimmt</option>
+                                </select>
+
+                                <label for="betroffenePersonTelefonnummer">Telefonnummer</label>
+                                <input type="text" id="betroffenePersonTelefonnummer" placeholder="Telefonnummer" />
+                            </fieldset>
+                        </div>
+                        <div class="column">
+                            <fieldset>
+                                <label for="betroffenePersonAnschriftenzeile">Straße</label>
+                                <input type="text" id="betroffenePersonAnschriftenzeile" placeholder="Straße" />
+
+                                <label for="betroffenePersonHausnummer">Hausnummer</label>
+                                <input type="text" id="betroffenePersonHausnummer" placeholder="Hausnummer" />
+
+                                <label for="betroffenePersonPlz">PLZ</label>
+                                <input type="text" id="betroffenePersonPlz" placeholder="PLZ" required/>
+
+                                <label for="betroffenePersonOrt">Stadt</label>
+                                <input type="text" id="betroffenePersonOrt" placeholder="Stadt" />
+
+                                <label for="betroffenePersonLaendercode">Land</label>
+                                <select id="betroffenePersonLaendercode">
+                                    <option value="20422">Deutschland</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="befund" class="container">
+                <div class="container">
+                    <p class="description">Hier wird das Ergebnis eingetragen:</p>
+                    <div class="row">
+                        <div class="column">
+                            <fieldset>
+                                <label for="meldetatbestand">Meldetatbestand</label>
+                                <select id="meldetatbestand">
+                                    <option value="94500-6">94500-6 | SARS-CoV-2 RNA NAA+probe Ql (Resp)</option>
+                                </select>
+
+                                <label for="auftragsnummerLabor">Laborauftragsnummer</label>
+                                <input type="text" id="auftragsnummerLabor" placeholder="bspw. 10002020-1" />
+
+                                <label for="befundArt">Befundart des Bericht</label>
+                                <select id="befundArt">
+                                    <option value="E">Endbefund</option>
+                                    <option value="T">Teilbefund</option>
+                                    <option value="V">Vorläufiger Befund</option>
+                                    <option value="A">Archiv-Befund</option>
+                                    <option value="N">Nachbefund</option>
+                                </select>
+
+                                <label for="testBezeichnung">Nachweismethode</label>
+                                <select id="testBezeichnung">
+                                    <option value="s001">s001 | Polymerase chain reaction analysis (procedure)</option>
+                                </select>
+
+                                <label for="probenmaterialBezeichnung">Testmaterial</label>
+                                <select id="probenmaterialBezeichnung">
+                                    <option value="s001">s001 | Upper respiratory swab sample (specimen)</option>
+                                    <option value="s002">s002 | Nasopharyngeal swab (specimen)</option>
+                                    <option value="s002">s002 | Nasopharyngeal swab (specimen)</option>
+                                </select>
+
+                                <label for="demisTestCode">DEMIS Test-Code</label>
+                                <select id="demisTestCode">
+                                    <option value="94500-6">94500-6 | SARS-CoV-2 RNA NAA+probe Ql (Resp)</option>
+                                </select>
+
+                                <label for="probenmaterialEingangsdatum">Datum des Probeneingangs im Labor</label>
+                                <input type="date" id="probenmaterialEingangsdatum" placeholder="2021-05-25" required/>
+
+                                <label for="ergebnisText">Ergebnis des durchgeführten Labortests</label>
+                                <select id="ergebnisText">
+                                    <option selected value="">POSITIV</option>
+                                    <option value="positiv">positiv</option>
+                                    <option value="negativ">negativ</option>
+                                    <option value="invalid">schwach positiv</option>
+                                </select>
+
+                                <label for="testbezogeneHinweise">Testbezogene Hinweise</label>
+                                <textarea id="testbezogeneHinweise" name="msg" placeholder="weitere Hinweise" style="height:100px"></textarea>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="submit" class="container">
+                <div class="container">
+                    <div class="row">
+                        <div class="column">
+                            <input class="button" type="submit" id="bt" value="Befund erstellen!" onclick="saveFile()" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+        <footer class="footer">
+                <section class="container">
+                    <div class="row">
+                        <div class="column">
+                            <p>Version: 0.1</p>
+                            <p>2021</p>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+    </div>
+</body>
+
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+        const einsender = {
+            einsenderEinrichtungIdentifier: document.getElementById('einsenderEinrichtungIdentifier').value,
+            einsenderEinrichtungName: document.getElementById('einsenderEinrichtungName').value,
+            einsenderEinrichtungAnschriftenzeile: document.getElementById('einsenderEinrichtungAnschriftenzeile').value,
+            einsenderEinrichtungPlz: document.getElementById('einsenderEinrichtungPlz').value,
+            einsenderEinrichtungOrt: document.getElementById('einsenderEinrichtungOrt').value,
+            einsenderEinrichtungPlz: document.getElementById('einsenderEinrichtungPlz').value,
+            einsenderEinrichtungOrt: document.getElementById('einsenderEinrichtungOrt').value,
+            einsenderEinrichtungTelefonnummer: document.getElementById('einsenderEinrichtungTelefonnummer').value,
+            einsenderEinrichtungFaxnummer: document.getElementById('einsenderEinrichtungFaxnummer').value,
+            einsenderEinrichtungEmail: document.getElementById('einsenderEinrichtungEmail').value,
+            einsenderEinrichtungAnsprechpartner: document.getElementById('einsenderEinrichtungAnsprechpartner').value,
+            melderEinrichtungIdentifier: document.getElementById('melderEinrichtungIdentifier').value
+            };
+
+        var betroffenePersonNachname = document.getElementById('betroffenePersonNachname').value;
+
+        const person = {
+            betroffenePersonNachname: betroffenePersonNachname,
+            betroffenePersonVorname: document.getElementById('betroffenePersonVorname').value,
+            betroffenePersonGeburtsdatum: document.getElementById('betroffenePersonGeburtsdatum').value,
+            betroffenePersonGeschlecht: document.getElementById('betroffenePersonGeschlecht').value,
+            betroffenePersonAnschriftenzeile: document.getElementById('betroffenePersonAnschriftenzeile').value,
+            betroffenePersonHausnummer: document.getElementById('betroffenePersonHausnummer').value,
+            betroffenePersonPlz: document.getElementById('betroffenePersonPlz').value,
+            betroffenePersonOrt: document.getElementById('betroffenePersonOrt').value,
+            betroffenePersonLaendercode: document.getElementById('betroffenePersonLaendercode').value,
+            betroffenePersonTelefonnummer: document.getElementById('betroffenePersonTelefonnummer').value
+            };
+
+        var probenmaterialEingangsdatum = document.getElementById('probenmaterialEingangsdatum').value;
+        const meldung = {
+            meldetatbestand: document.getElementById('meldetatbestand').value,
+            auftragsnummerLabor: document.getElementById('auftragsnummerLabor').value,
+            befundArt: document.getElementById('befundArt').value,
+            erregerNachweise: [
+            {
+                testBezeichnung: document.getElementById('testBezeichnung').value,
+                demisTestCode: document.getElementById('demisTestCode').value,
+                probenmaterialBezeichnung: document.getElementById('probenmaterialBezeichnung').value,
+                probenmaterialEingangsdatum: probenmaterialEingangsdatum,
+                ergebnisText: document.getElementById('ergebnisText').value,
+                testbezogeneHinweise: document.getElementById('testbezogeneHinweise').value
+             } ]
+            };
+
+
+        const data = {...einsender, ...person, ...meldung};
+
+        console.log(data)
+
+        // This variable stores all the data.
+
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([JSON.stringify(data)], { type: 'text/plain' });
+        const sFileName = probenmaterialEingangsdatum + '-' + betroffenePersonNachname + '.json' ;	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+</html>
